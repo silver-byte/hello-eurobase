@@ -4,6 +4,7 @@ const os = require('os');
 const port = process.env.PORT || 3000;
 
 const server = http.createServer((req, res) => {
+  console.log(`Request: ${req.method} ${req.url} host=${req.headers.host || ''} ua=${req.headers['user-agent'] || ''}`);
   const body = {
     message: 'hello from Eurobase',
     cpus: os.cpus().length,
